@@ -54,3 +54,5 @@ gem "rolify"
 gem "pundit"
 
 gem 'kaminari'
+
+gem 'rack-cors'

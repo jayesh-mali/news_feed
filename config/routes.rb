@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :images
   resources :posts
-  mount_devise_token_auth_for 'User', at: 'auth'
+  # mount_devise_token_auth_for 'User', at: 'auth'
+
+  mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+    registrations:  'registrations',
+    sessions:  'sessions'
+  }
   
   resource :users do
     member do
@@ -12,6 +17,7 @@ Rails.application.routes.draw do
       get 'active_friends'
       get 'pending_friends'
       get 'received_friends'
+      get 'suggested_friends'
     end
   end
 

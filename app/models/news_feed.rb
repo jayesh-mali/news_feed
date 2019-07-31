@@ -1,5 +1,5 @@
 class NewsFeed < ApplicationRecord
-    belongs_to :postable, polymorphic: true
+    belongs_to :postable, polymorphic: true, dependent: :destroy
     belongs_to :created_by, class_name: 'User'
 
     def self.list_news_feeds(current_user)

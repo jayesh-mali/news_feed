@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+    def suggested_friends
+        render json: current_user.suggested_friends, status: :ok
+    end
+
     def add_friend
         begin
             current_user.add_friend(friend_params[:friend_id])
